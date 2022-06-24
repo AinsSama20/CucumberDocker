@@ -8,21 +8,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Hooks {
     private static WebDriver driver;
-//    WebDriverManager wdm = WebDriverManager.chromedriver().browserInDocker();
+    WebDriverManager wdm = WebDriverManager.chromedriver().browserInDocker();
     @Before
     public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-//        driver = wdm.create();
+//        WebDriverManager.chromedriver().setup();
+//        driver = new ChromeDriver();
+        driver = wdm.create();
         driver.get("https://www.google.com/");
 //        driver.manage().window().maximize();
     }
     @After
     public void tearDown(){
-//        wdm.quit();
-        if (driver != null) {
-            driver.quit();
-        }
+        wdm.quit();
+//        if (driver != null) {
+//            driver.quit();
+//        }
     }
 
     public static WebDriver getDriver(){
