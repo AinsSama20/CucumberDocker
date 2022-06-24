@@ -4,18 +4,15 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
-import java.util.concurrent.TimeUnit;
 
 public class Hooks {
     private static WebDriver driver;
-    WebDriverManager wdm = WebDriverManager.chromedriver().browserInDocker();;
+    WebDriverManager wdm = WebDriverManager.chromedriver().browserInDocker();
     @Before
     public void setUp(){
 //        driver = new ChromeDriver();
-        driver = wdm.create();
+        driver = WebDriverManager.chromedriver().browserInDocker().enableVnc().enableRecording().create();
         driver.get("https://www.google.com/");
 //        driver.manage().window().maximize();
     }
