@@ -11,13 +11,11 @@ import java.util.concurrent.TimeUnit;
 
 public class Hooks {
     private static WebDriver driver;
-    private static WebDriverManager wdm;
+    WebDriverManager wdm = WebDriverManager.chromedriver().browserInDocker();;
     @Before
     public void setUp(){
-        wdm = WebDriverManager.chromedriver().browserInDocker();
 //        driver = new ChromeDriver();
         driver = wdm.create();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.google.com/");
 //        driver.manage().window().maximize();
     }
