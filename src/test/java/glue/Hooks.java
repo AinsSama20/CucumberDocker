@@ -12,7 +12,7 @@ public class Hooks {
     @Before
     public void setUp(){
 //        driver = new ChromeDriver();
-        driver = WebDriverManager.chromedriver().browserInDocker().enableVnc().enableRecording().create();
+        driver = wdm.create();
         driver.get("https://www.google.com/");
 //        driver.manage().window().maximize();
     }
