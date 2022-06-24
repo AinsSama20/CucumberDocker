@@ -10,8 +10,7 @@ import org.junit.runner.RunWith;
         glue = ("glue"),
         publish = true,
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-        snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = " "
+        snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 public class TestRunner {
 }
