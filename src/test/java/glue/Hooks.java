@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Hooks {
     private static WebDriver driver;
-    WebDriverManager wdm = WebDriverManager.chromedriver().browserInDocker().remoteAddress("http://23.21.232.222/");
+    WebDriverManager wdm = WebDriverManager.chromedriver().browserInDocker();
     @Before
     public void setUp(){
 //        WebDriverManager.chromedriver().setup();
